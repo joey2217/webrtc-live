@@ -11,6 +11,13 @@ export function getSupportedMimeTypes() {
   })
 }
 
+// 'audio': {'echoCancellation': true},
+// 'video': {
+//     'deviceId': cameraId,
+//     'width': {'min': minWidth},
+//     'height': {'min': minHeight}
+//     }
+// }
 export function getUserMedia(
   constraints: MediaStreamConstraints = {
     audio: false,
@@ -39,7 +46,9 @@ export function downloadVideo(
   a.href = url
   let downloadName = fileName
   if (!downloadName) {
-    downloadName = `record_${new Date().toLocaleString('zh-CN', { hour12: false })}.webm`
+    downloadName = `record_${new Date().toLocaleString('zh-CN', {
+      hour12: false,
+    })}.webm`
   }
   a.download = downloadName
   document.body.appendChild(a)
@@ -48,4 +57,11 @@ export function downloadVideo(
     document.body.removeChild(a)
     window.URL.revokeObjectURL(url)
   }, 100)
+}
+
+export function getConnectedDevices(type: MediaDeviceKind) {
+  return navigator.mediaDevices.enumerateDevices().then((devices) => {
+    const filtered = devices.filter((device) => device.kind === type)
+    return filtered
+  })
 }
