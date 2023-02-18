@@ -20,6 +20,10 @@ const items: MenuProps['items'] = [
     label: <Link to="/record">录制</Link>,
     key: '/record',
   },
+  {
+    label: <Link to="/p2p">P2P视频</Link>,
+    key: '/p2p',
+  },
 ]
 
 const AppHeader: React.FC = () => {

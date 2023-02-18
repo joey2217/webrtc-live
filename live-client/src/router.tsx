@@ -5,6 +5,7 @@ import Home from './pages/home'
 import Record from './pages/record'
 import Stream from './pages/stream'
 import Live from './pages/live'
+import P2p from './pages/p2p'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
       {
         path: 'live',
         element: <Live />,
+        errorElement: <Error />,
+      },
+      {
+        path: 'p2p',
+        element: <P2p />,
         errorElement: <Error />,
       },
     ],
