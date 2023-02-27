@@ -24,6 +24,10 @@ const items: MenuProps['items'] = [
     label: <Link to="/p2p">P2P视频</Link>,
     key: '/p2p',
   },
+  {
+    label: <Link to="/chat">聊天室</Link>,
+    key: '/chat',
+  },
 ]
 
 const AppHeader: React.FC = () => {
