@@ -4,7 +4,9 @@ import { Button, Input } from 'antd'
 import { io } from 'socket.io-client'
 
 // const socket = io('/')
-const socket = io('http://localhost:3000')
+const socket = io('http://162.14.110.244:8100/')
+// const socket = io('http://162.14.110.244:8000/')
+// const socket = io('http://localhost:3000')
 
 interface IMessage {
   type: 'send' | 'receive'
